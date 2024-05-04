@@ -1,0 +1,33 @@
+services:
+  mongodb:
+    image: mongo
+    container_name: ticket-mongodb
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=nida
+      - MONGO_INITDB_ROOT_PASSWORD=nida
+    ports:
+      - 27017:27017
+    volumes:
+      - "D:/data/mongodb/nida-app:/db-data"
+    networks:
+      - ticket-app-network
+
+  next-js:
+    build:
+      context: .
+      dockerfile: Dockerfile_nextjs
+    container_name: ticket-next-app
+    restart: always
+    environment:
+      - MONGODB_URI=mongodb://nida:nida@ticket-mongodb:27017/TicketDB?directConnection=true&authSource=admin
+    depends_on:
+      - mongodb
+    ports:
+      - 3000:3000
+    networks:
+      - ticket-app-network
+
+networks:
+  ticket-app-network:
+    driver: bridge
