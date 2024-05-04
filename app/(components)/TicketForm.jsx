@@ -2,7 +2,6 @@
 
 import { useRouter } from 'next/navigation';
 import React, { useState } from "react";
-import ticket from "@/app/(models)/Ticket";
 
 const TicketForm = ({ ticket }) => {
   const EDIT_MODE = ticket._id !== "new";
@@ -43,8 +42,8 @@ const TicketForm = ({ ticket }) => {
       }
     }
 
-    router.refresh();
     router.push("/");
+    router.refresh();
   };
 
   const startingTicketData = {

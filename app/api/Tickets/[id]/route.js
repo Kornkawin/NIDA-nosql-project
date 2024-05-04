@@ -5,7 +5,7 @@ export async function GET(req, { params }) {
   try {
     console.log("GET /api/Tickets/[id]")
     const { id } = params;
-    const foundTicket = await  Ticket.findOne(id);
+    const foundTicket = await Ticket.findOne({_id: id});
     return NextResponse.json({ foundTicket }, { status : 200 })
   } catch (error) {
     return NextResponse.json({ message: error.message }, { status: 500 });
@@ -32,8 +32,7 @@ export async function PUT(req, { params }) {
 
     const updateTicketData = await Ticket.findByIdAndUpdate(id, {
       ...ticketData
-    })
-
+    });
 
     return NextResponse.json({ message: "Ticket updated" }, { status: 200 });
   } catch (error) {
