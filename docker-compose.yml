@@ -1,6 +1,7 @@
+version: '3.8'
 services:
   mongodb:
-    image: mongo
+    image: mongo:7.0.10-rc0-jammy
     container_name: ticket-mongodb
     restart: always
     environment:
@@ -9,7 +10,8 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - "D:/data/mongodb/nida-app:/db-data"
+#      - "D:/data/mongodb/nida-app:/db-data"
+      - "/var/opt/mongodb/nida-app:/db-data"
     networks:
       - ticket-app-network
 
