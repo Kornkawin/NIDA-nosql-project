@@ -10,8 +10,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-#      - "D:/data/mongodb/nida-app:/db-data"
-      - "/var/opt/mongodb/nida-app:/db-data"
+      - "./mongodb/data/db:/data/db"
     networks:
       - ticket-app-network
 
