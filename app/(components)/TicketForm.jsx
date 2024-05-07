@@ -73,7 +73,7 @@ const TicketForm = ({ ticket }) => {
         method="post"
         onSubmit={handleSubmit}
       >
-        <h3>{ EDIT_MODE ? "Update your Ticket" : "Create your Ticket" }</h3>
+        <h3>{ EDIT_MODE ? "Update" : "Create" }</h3>
         <label>Title</label>
         <input
           id="title"
@@ -165,7 +165,7 @@ const TicketForm = ({ ticket }) => {
         <input
           type="submit"
           className="btn"
-          value={ EDIT_MODE ? "Update your Ticket" : "Create your Ticket" }
+          value={ EDIT_MODE ? "Update" : "Create" }
         />
       </form>
     </div>
