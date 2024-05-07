@@ -1,0 +1,81 @@
+db.tickets.insertMany([
+{
+  title: 'Implement mongodb server',
+  description: 'used for nosql project',
+  category: 'Project',
+  priority: 5,
+  progress: 100,
+  status: 'done',
+  createdAt: new Date(),
+  updatedAt: new Date()
+},
+{
+  title: 'Optimize queries',
+  description: 'improve performance',
+  category: 'Project',
+  priority: 3,
+  progress: 20,
+  status: 'started',
+  createdAt: new Date(),
+  updatedAt: new Date()
+},
+{
+  title: 'Add new user authentication',
+  description: 'security feature',
+  category: 'Project',
+  priority: 3,
+  progress: 0,
+  status: 'not started',
+  createdAt: new Date(),
+  updatedAt: new Date()
+},
+{
+  title: 'Create new landing page',
+  description: 'for marketing',
+  category: 'Project',
+  priority: 0,
+  progress: 50,
+  status: 'started',
+  createdAt: new Date(),
+  updatedAt: new Date()
+},
+{
+  title: 'Fixed broken links',
+  description: 'for website',
+  category: 'Software Problem',
+  priority: 5,
+  progress: 80,
+  status: 'started',
+  createdAt: new Date(),
+  updatedAt: new Date()
+},
+{
+  title: 'Fixed bugs in nginx server',
+  description: 'for website',
+  category: 'Software Problem',
+  priority: 1,
+  progress: 0,
+  status: 'not started',
+  createdAt: new Date(),
+  updatedAt: new Date()
+},
+{
+  title: 'Buy new workstation',
+  description: 'for website',
+  category: 'Hardware Problem',
+  priority: 4,
+  progress: 50,
+  status: 'started',
+  createdAt: new Date(),
+  updatedAt: new Date()
+},
+{
+  title: 'Upgrade UPS',
+  description: 'for workstation',
+  category: 'Hardware Problem',
+  priority: 4,
+  progress: 100,
+  status: 'done',
+  createdAt: new Date(),
+  updatedAt: new Date()
+}]);
