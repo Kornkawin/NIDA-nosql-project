@@ -21,7 +21,7 @@ const TicketForm = ({ ticket }) => {
     event.preventDefault();
 
     if (EDIT_MODE) {
-      const res = await fetch(`http://localhost:3000/api/Tickets/${ticket._id}`, {
+      const res = await fetch(`https://ticket.kornkawin.synology.me/api/Tickets/${ticket._id}`, {
         method: "PUT",
         body: JSON.stringify({ formData }),
         "content-type": "application/json",
@@ -31,7 +31,7 @@ const TicketForm = ({ ticket }) => {
         throw new Error("Failed to update Ticket.");
       }
     } else {
-      const res = await fetch("http://localhost:3000/api/Tickets", {
+      const res = await fetch("https://ticket.kornkawin.synology.me/api/Tickets", {
         method: "POST",
         body: JSON.stringify({ formData }),
         "content-type": "application/json",
